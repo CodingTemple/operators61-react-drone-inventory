@@ -1,25 +1,18 @@
 import * as React from 'react';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@material-ui/data-grid';
+import { useGetData } from '../../custom-hooks'
+
 
 const columns: GridColDef[] = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'firstName', headerName: 'First name', width: 130 },
-  { field: 'lastName', headerName: 'Last name', width: 130 },
+  { field: 'id', headerName: 'ID', width: 170 },
+  { field: 'name', headerName: 'Drone name', width: 130 },
+  { field: 'description', headerName: 'Description', width: 130 },
   {
-    field: 'age',
-    headerName: 'Age',
-    type: 'number',
+    field: 'price',
+    headerName: 'Price',
+    type: 'string',
     width: 90,
-  },
-  {
-    field: 'fullName',
-    headerName: 'Full name',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 160,
-    valueGetter: (params: GridValueGetterParams) =>
-      `${params.getValue(params.id,'firstName') || ''} ${params.getValue(params.id,'lastName') || ''}`,
-  },
+  }
 ];
 
 const rows = [
@@ -35,10 +28,13 @@ const rows = [
 ];
 
 export const DataTable = () => {
+  let {droneData, getData } = useGetData();
+  
+  
     return(
         <div style={{height: 400, width: '100%'}}>
             <h1>Operators Drone Inventory</h1>
-            <DataGrid rows={rows} columns={columns} pageSize={5} checkboxSelection />
+            <DataGrid rows={droneData} columns={columns} pageSize={5} checkboxSelection />
         </div>
     );
 };

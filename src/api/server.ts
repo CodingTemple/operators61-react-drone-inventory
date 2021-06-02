@@ -1,6 +1,6 @@
 import React from 'react';
 
-let token = '2d3bd9bff718eeeef8a4a9ed9ad31d911b967f7644e657f6';
+let token = '5f2b21ef2f0aa6fed0b33a3a36e8b2b221975bb33223c410';
 
 export const server_calls = {
     get: async () => {
@@ -12,7 +12,7 @@ export const server_calls = {
             }
         });
         if (!response.ok){
-            throw new Error('Failed to featch data from the server')
+            throw new Error('Failed to fetch data from the server')
         }
         return await response.json()
     },

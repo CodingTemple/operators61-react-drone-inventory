@@ -7,21 +7,26 @@ import reportWebVitals from './reportWebVitals';
 //import for react routing
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
+import { Provider } from 'react-redux';
+import { store } from './redux/store'
+
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
-      <Switch>
-        <Route exact path='/'>
-          <Home title='Operators-61 Drone Inventory'/>
-        </Route>
+    <Provider store = { store }>
+      <Router>
+        <Switch>
+          <Route exact path='/'>
+            <Home title='Operators-61 Drone Inventory'/>
+          </Route>
 
-        <Route path='/dashboard' component={Dashboard} />
-        
-        <Route path='/signin' component={SignIn} />
+          <Route path='/dashboard' component={Dashboard} />
+          
+          <Route path='/signin' component={SignIn} />
 
 
-      </Switch>
-    </Router>
+        </Switch>
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

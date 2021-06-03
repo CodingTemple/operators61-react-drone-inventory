@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const rootSlice = createSlice({
     name: 'root',
     initialState: {
-        name: 'classic drone',
+        name: 'Nates new drone',
         price: '2000.00',
         description: "Redefine what's possible",
         cam_quality: '4k',

@@ -36,8 +36,8 @@ export const DroneForm = (props:DroneFormProps) => {
         } else {
             dispatch(chooseName(data.name))
             server_calls.create(store.getState())
-        
         }
+        
     }
     return (
         <div>

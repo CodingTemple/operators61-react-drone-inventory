@@ -195,7 +195,6 @@ export const Dashboard = withRouter((props:DashProps) => {
                     [classes.contentShift]: open
                 })}>
                     <div className={classes.drawerHeader} />
-                    <h1>Hello World Until Data Shows up</h1>
                     <DataTable />
                 </main>
             
